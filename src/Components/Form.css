@@ -1,0 +1,15 @@
+.Form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(195, 194, 194);
+    flex-direction: column;
+}
+
+input {
+    margin: 10px;
+}
+
+button {
+    margin: 50px;
+}
