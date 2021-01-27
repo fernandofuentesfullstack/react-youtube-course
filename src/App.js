@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de Tareas</h1>
-      <label>Tarea</label>
+      <label>Nombre tarea</label>
       <input
         type="text"
         id="task"
@@ -24,7 +24,7 @@ function App() {
           setTaskName(e.target.value);
         }}
       />
-      <label>Tiempo</label>
+      <label>Tiempo tarea</label>
       <input
         type="text"
         id="time"
@@ -33,13 +33,11 @@ function App() {
         }}
       />
 
-      <button onClick={addTask}>Nueva Tarea</button>
+      <button onClick={addTask}>Añadir Tarea</button>
 
-        {taskList.map((task) => {
-          return <Task taskName={task.task} time={task.time} />
-        })}
-
-
+      {taskList.map((task) => {
+        return <Task taskName={task.task} time={task.time} />;
+      })}
     </div>
   );
 }
