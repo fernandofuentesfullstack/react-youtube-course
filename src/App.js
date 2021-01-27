@@ -1,46 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [showHeader, setShowHeader] = useState(false);
+  const [number, setNumber] = useState(0);
 
-  const [name, setName] = useState("");
-  const [listOfNames, setListOfNames] = useState([]);
+  useEffect(() => {
+    console.log('page rendered')
+  }, [number])
 
   return (
-    <div className="App">
-      <div>
-        <h1>Ejemplo 1</h1>
-        <input
-          type="text"
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-        <button
-          onClick={() => {
-            setListOfNames([...listOfNames, name]);
-            setName("");
-            console.log(listOfNames);
-          }}
-        >
-          Add name
-        </button>
-        {listOfNames.map((value, key) => (
-          <h1 key={key}> {value} </h1>
-        ))}
-      </div>
+    <div className="App" style={{ fontSize: 30 }}>
+      {number}
+      <button
+        onClick={() => {
+          setNumber(number + 1);
+        }}
+      >
+        {" "}
+        Increase Number
+      </button>
 
-      <br />
-      <br />
-
-      <div>
-        <h1>Ejemplo 2</h1>
-        <button onClick={() => setShowHeader(!showHeader)}>
-          Change header
-        </button>
-        {showHeader ? <h1>Hello</h1> : <h1>No Hello</h1>}
-      </div>
     </div>
   );
 }
