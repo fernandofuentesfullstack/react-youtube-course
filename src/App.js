@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import "./App.css";
 
 function App() {
-  const [number, setNumber] = useState(0);
+  const input = useRef(null);
 
-  useEffect(() => {
-    console.log('page rendered')
-  }, [number])
+  const changePlaceholder = () => {
+    input.current.placeholder = "fullstack";
+    console.log(input.current.placeholder);
+    input.current.focus();
+  };
 
   return (
-    <div className="App" style={{ fontSize: 30 }}>
-      {number}
-      <button
-        onClick={() => {
-          setNumber(number + 1);
-        }}
-      >
-        {" "}
-        Increase Number
-      </button>
-
+    <div className="App">
+      <input type="text" placeholder="wassup" ref={input} />
+      <button onClick={changePlaceholder}>Change Placeholder</button>
     </div>
   );
 }
