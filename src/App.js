@@ -1,12 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import Task from "./Components/Task";
 
 function App() {
-  
+  const [taskName, setTaskName] = useState("");
+  const [time, setTime] = useState("");
+  const [taskList, setTaskList] = useState([]);
+
+  const addTask = () => {
+    setTaskList([...taskList, { task: taskName, time: time }]);
+    setTaskName("");
+    setTime("");
+  };
+
   return (
     <div className="App">
-      <h1>Fernando Fuentes FullStack</h1>
-      <h2>¡¡ Suscríbete !!</h2>
+      <h1>Lista de Tareas</h1>
+      <label>Tarea</label>
+      <input
+        type="text"
+        id="task"
+        onChange={(e) => {
+          setTaskName(e.target.value);
+        }}
+      />
+      <label>Tiempo</label>
+      <input
+        type="text"
+        id="time"
+        onChange={(e) => {
+          setTime(e.target.value);
+        }}
+      />
+
+      <button onClick={addTask}>Nueva Tarea</button>
+
+        {taskList.map((task) => {
+          return <Task taskName={task.task} time={task.time} />
+        })}
+
+
     </div>
   );
 }
