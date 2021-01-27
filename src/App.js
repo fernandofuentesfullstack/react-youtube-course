@@ -19,6 +19,7 @@ function App() {
         {" "}
         Increase Number
       </button>
+
     </div>
   );
 }
