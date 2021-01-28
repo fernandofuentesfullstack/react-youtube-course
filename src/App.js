@@ -19,8 +19,8 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={submitForm}>
-        <label htmlFor="firstName">First name</label>
+      <form>
+        <label htmlFor="firstName">Nombre</label>
         <input
           type="text"
           id="firstName"
@@ -28,7 +28,7 @@ function App() {
             setFirstName(e.target.value);
           }}
         />
-        <label htmlFor="lastName">Last name</label>
+        <label htmlFor="lastName">Apellidos</label>
         <input
           type="text"
           id="lastName"
@@ -44,7 +44,7 @@ function App() {
             setEmail(e.target.value);
           }}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Contraseña</label>
         <input
           type="password"
           id="password"
@@ -52,7 +52,7 @@ function App() {
             setPassword(e.target.value);
           }}
         />
-        <input type="submit" />
+        <input type="button" value="Enviar" onClick={submitForm} />
       </form>
     </div>
   );
