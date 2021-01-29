@@ -1,15 +1,22 @@
 import React from "react";
+import { ButtonBlue, ButtonGreen, ButtonRed } from "./Components/ButtonColor";
+import { Button } from "./Components/Button";
 import "./App.css";
 
 function App() {
-  
   return (
     <div className="App">
-      <h1>Fernando Fuentes FullStack</h1>
-      <h2>Curso React #7</h2>
-      <h2>¡¡ Suscríbete !!</h2>
+      <Button color={"blue"} darkColor={"darkblue"} large>
+        This is a button with props
+      </Button>
+      <ButtonRed>This is a styled button Red</ButtonRed>
+      <ButtonBlue>This is a styled button Blue</ButtonBlue>
+      <ButtonGreen>This is a styled button Green</ButtonGreen>
     </div>
   );
 }
 
 export default App;
+
+// yarn add styled-components
+// npm i styled-components
